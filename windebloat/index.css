@@ -1,0 +1,28 @@
+body {
+    font-family: monospace;
+    padding: 2rem;
+    padding-top: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.removeapps-options {
+    margin-left: 1em;
+    display: none; /* index.js: changes to grid on check */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px 20px;
+    margin-top: 10px;
+}
+
+.removeapps-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#generate {
+    padding: 10px;
+    font-size: 2ex;
+}

@@ -1,0 +1,14 @@
+html, body {
+    width: 100%; height: 100%;
+    font-family: 'Comic Sans MS', 'Comic Sans', monospace;
+    overflow: hidden;
+}
+
+body {
+    background-image: url("/assets/kiwi.png");
+    background-size: cover;
+}
+
+.center {
+    text-align: center;
+}

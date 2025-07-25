@@ -1,6 +1,0 @@
-{
-    "test-0.1.0": {
-        "download": "https://example.com/index.html",
-        "run": "notepad.exe index.html"
-    }
-}

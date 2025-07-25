@@ -1,0 +1,10 @@
+body {
+    background-image: url("/assets/chillin64x64.png");
+    background-repeat: repeat;
+    animation: bgMove 0.75s linear infinite;
+}
+
+@keyframes bgMove {
+    0%   { background-position: 0 0; }
+    100% { background-position: 64px 64px; }
+}

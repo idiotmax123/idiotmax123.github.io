@@ -1,0 +1,36 @@
+body {
+    height: 100vh; width: 100vw;
+    background-image: url("/assets/crappymatrix.gif");
+    background-size: cover;
+    overflow: hidden;
+    color: #002f09;
+}
+
+.container {
+    justify-content: center;
+    text-align: center;
+}
+
+.hacking {
+    background-color: #ddd;
+}
+
+.spinner {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 999px;
+    background-color: #aaa;
+    border: #005 2rem solid;
+    border-top: #aaa 2rem solid;
+    /* border-left: #aaa 2rem solid; */
+    animation: spin 0.5s ease 0s infinite;
+}
+
+@keyframes spin {
+    0%      { transform: rotate(0deg); }
+    100%    { transform: rotate(360deg); }
+}
+
+.hacking {
+    display: none;
+}

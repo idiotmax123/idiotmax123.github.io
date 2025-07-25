@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ULTIMAET HAXXOR TOOL !!!!11!</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Xxx ULT1M4ET H4XXOR T00L xxX</h1>
+
+        <h3>WHO H4CK:</h3>
+        <input id='whoHack' type="text">
+        <hr><hr>
+        <button onclick="hack()">!! [[ H4CK ]] !!</button>
+    </div>
+
+    <div class="hacking">
+            <p>H4CKING... PLEASE WAIT...!</p> <div class="spinner"></div>
+            <p id="ipv4"></p>
+            <p id="location"></p>
+            <p id="wps"></p>
+            <p id="upnp"></p>
+            <p id="devices"></p>
+            <p id="vulns"></p>
+        </div>
+
+    <script>
+        function hack() {
+            document.querySelector('p#ipv4').innerText = "";
+            document.querySelector('p#location').innerText = "";
+            document.querySelector('p#wps').innerText = "";
+            document.querySelector('p#upnp').innerText = "";
+            document.querySelector('p#devices').innerText = "";
+            document.querySelector('p#vulns').innerText = "";
+
+            if (document.querySelector('input#whoHack').value.trim() == '') {
+                alert("TYPE WHO TO H4CK...!");
+                return;
+            }
+
+            document.querySelector('div.hacking').style.display = "inline-block";
+
+            let ips = [
+                "127.0.0.1",
+                "123.456.789.000",
+                "0.1234.56767.67",
+                "999.999.999.999",
+                "1.1.1.1",
+                "134.5134.54584.123123",
+                "12348.1236758.12312354756.`7312423"
+            ];
+
+            let locations = [
+                "Pee Pee Island",
+                "Moscow",
+                "Hitlerland",
+                "Goonland"
+            ];
+
+            const ip = ips[Math.floor(Math.random()*ips.length)];
+            const location = locations[Math.floor(Math.random()*locations.length)];
+            const wps = (Math.floor(Math.random()*2) == 0) ? false : true;
+            const upnp = (Math.floor(Math.random()*2) == 0) ? false : true;
+            const devices = Math.floor(Math.random()*20);
+            const vulns = Math.floor(Math.random()*5);
+
+            setTimeout(() => {
+                document.querySelector('p#ipv4').innerText = `IPv4: ${ip}`;
+                document.querySelector('p#location').innerText = `Location: ${location}`;
+                document.querySelector('p#wps').innerText = `WPS: ${wps}`;
+                document.querySelector('p#upnp').innerText = `UPnP: ${upnp}`;
+                document.querySelector('p#devices').innerText = `${devices} devices connected to network`;
+                document.querySelector('p#vulns').innerText = `${vulns} vulnerabilities detected`;
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>max's windows debloater</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="title">
+        <h1>max's windows debloater<span style="font-size: 1ex"> script generator</span></h1>
+    </div>
+    <hr>
+    <input type="checkbox" id="option-removeapps">
+    <label for="option-removeapps">Remove pre-installed apps <span style="font-size: 1.375ex; font-weight: bold">(check to see options)</span></label><br>
+    <div class="removeapps-options"></div>
+    <input type="checkbox" id="option-removeletsfinish">
+    <label for="option-removeletsfinish"><span style="font-size: 1.375ex">(kinda) </span>remove the "Finish setting up your device" screen</label><br>
+    <input type="checkbox" id="option-disabletelemetry">
+    <label for="option-disabletelemetry">Disable <span style="font-size: 1.375ex">(most of) </span>the telemetry</label><br>
+
+    
+    <br>
+
+    <button id="generate" onclick="generate()">generate !!</button><br><br>
+    <textarea readonly id="script"></textarea>
+    <p>^^^^^ paste the generated code into powershell (as administrator)</p>
+
+    <script src="index.js"></script>
+</body>
+</html>
