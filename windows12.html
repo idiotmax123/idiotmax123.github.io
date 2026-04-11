@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 12</title>
+
+    <style>
+        html {
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        @keyframes bgMove {
+            0%   { background-position: 0 0; }
+            100% { background-position: 128px 128px; }
+        }
+
+        .main {
+            text-align: center;    
+        }
+        .title {
+            font-size: 8ex;
+        }
+        .inline {
+            display: inline-block;
+        }
+        span.letter {
+            display: inline-block;
+        }
+        .selectedLanguage {
+            background-color: rgb(0, 153, 255);
+            border-radius: 7.5px;
+            padding: 5px;
+        }
+        p#english, p#russian, p#italian, p#romanian {
+            background-color: none;
+            border-radius: 7.5px;
+            padding: 5px;
+        }
+        span {
+            padding: 0;
+            margin: 0;
+            gap: 0;
+        }
+    </style>
+</head>
+<body>
+    <audio id="sound" src="assets/metalpipe.mp3"></audio>
+
+    <div class="main">
+        <label>Lanuguage: </label>
+        <p id="english" class="inline selectedLanguage">English</p> |
+        <p id="russian" class="inline">
+            <span class="letter">R</span><span class="letter">u</span><span class="letter">s</span><span class="letter">s</span><span class="letter">i</span><span class="letter">a</span><span class="letter">n</span>
+        </p> <p id="russianSeparator" class="inline">|</p>
+        <p id="italian" class="inline">Italian</p> |
+        <p id="romanian" class="inline">Romanian</p><br>
+
+        <img src="asdjkasjm,m,asdasdas" alt="logo" class="inline">
+        <h1 class="title inline">Windows 12</h1>
+        
+        <h3>Download ↓↓↓vvv BLYAT</h3>
+        <button>dowNload</button>
+    </div>
+    
+    <script>
+        let selected = document.querySelector('p#english');
+        let english = document.querySelector('p#english');
+        let russian = document.querySelector('p#russian');
+        let italian = document.querySelector('p#italian');
+        let romanian = document.querySelector('p#romanian');
+
+        english.onclick = () => {
+            console.log("onclick");
+            selected.classList.remove("selectedLanguage");
+            english.classList.add("selectedLanguage");
+            selected = english;
+        };
+        russian.onclick = () => {
+            selected.classList.remove("selectedLanguage");
+            english.classList.add("selectedLanguage");
+            selected = english;
+
+            let sound = document.getElementById("sound");
+            sound.volume = 0.25;
+            sound.play();
+
+            let letters = Array.from(russian.children);
+            console.log(letters);
+            let directionsX = [];
+            let directionsY = [];
+            let offsetsX = [];
+            let offsetsY = [];
+
+            let i = 0;
+
+            letters.forEach(letter => {
+                directionsX[i] = Math.random();
+                directionsY[i] = Math.random();
+                offsetsX[i] = 0;
+                offsetsY[i] = 0;
+                i++;
+            });
+            
+            let k = 0;
+
+            const id = setInterval(() => {
+                let j = 0;
+
+                letters.forEach(letter => {
+                    offsetsX[j] += directionsX[j] * 50;
+                    offsetsY[j] += directionsY[j] * 50;
+                    letter.style.transform = `translate(${offsetsX[j]}px, ${offsetsY[j]}px)`;
+                    j++;
+                });
+
+                k++;
+                if (k >= 30) {
+                    document.querySelector("p#russian").remove();
+                    document.querySelector("p#russianSeparator").remove();
+                    clearInterval(id);
+                }
+            }, 50);
+        };
+        italian.onclick = () => {
+            selected.classList.remove("selectedLanguage");
+            italian.classList.add("selectedLanguage");
+            selected = italian;
+
+            document.body.style.backgroundImage = 'url("assets/pizza.jpg")';
+            document.body.style.backgroundRepeat = 'repeat';
+            document.body.style.animation = 'bgMove 0.75s linear infinite';
+        };
+        romanian.onclick = () => {
+            selected.classList.remove("selectedLanguage");
+            romanian.classList.add("selectedLanguage");
+            selected = romanian;
+
+            document.querySelector("div.main").childNodes.forEach(el => {
+                el.innerText = "wallet";
+            });
+        };
+    </script>
+</body>
+</html>
